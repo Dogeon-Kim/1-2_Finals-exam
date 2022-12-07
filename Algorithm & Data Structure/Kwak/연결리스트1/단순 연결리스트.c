@@ -1,11 +1,12 @@
-// 동적으로 구조체 생성하기
 #include<stdio.h>
 #include<stdlib.h>
+
 typedef int element;
 typedef struct Node{
 	element data;
 	struct Node *next;
 }Node;
+
 int main(){
 	Node *n1, *n2 ,*n3, *head;
 	n1 = (Node*)malloc(sizeof(Node));
