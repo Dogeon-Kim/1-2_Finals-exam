@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef int element;
 
+typedef int element;
 typedef struct Node{
 	element data;
 	struct Node *next;
@@ -41,15 +41,12 @@ Node* delete(Node *head, Node *pre){
 }
 
 void printList(Node *head){
-	for(Node *p=head; p!=NULL; p=p->next){
-		printf("%d->", p->data);
-	}
+	for(Node *p=head; p!=NULL; p=p->next) printf("%d->", p->data);
 	printf("NULL\n");
 }
 
 int main(){
-	Node *head=NULL;
-	Node *temp=NULL;
+	Node *head=NULL, *temp=NULL;
 	printf("[첫 위치 삽입]\n");
 	for(int i=0; i<5; i++){
 		head = insertFirst(head, i);
@@ -57,12 +54,8 @@ int main(){
 		if(i==2) temp=head;
 	}
 	printf("[중간위치 삽입]\n");
-	head=insert(head, temp, 100);
-	printList(head);
-	printf("[중간위치 삭제]\n");
-	head=delete(head, temp);
-	printList(head);
-	printf("[첫 위치 삭제]\n");
+	head=insert(head, temp, 100); printList(head); printf("[중간위치 삭제]\n");
+	head=delete(head, temp); printList(head); printf("[첫 위치 삭제]\n");
 	for(int i=0; i<5; i++){
 		head=deleteFirst(head);
 		printList(head);
